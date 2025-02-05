@@ -1,100 +1,127 @@
 <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CNS - Elegância e sofisticação em calçados masculinos desde 1990.">
+    <title>CNS Calçados</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+</head>
+<body>
 
-<HTML lag="pt-br">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Cabeçalho -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>CNS Online</h1>
+            <p>Calçados masculinos com sofisticação e qualidade incomparável desde 1990.</p>
+            <a href="#produtos" class="btn">Conheça nossos produtos</a>
+        </div>
+    </header>
 
-
-    <head>
-
-<link rel="stylesheet" href="css/styles.css">
-        <meta charset="utf-8">
-
-        <meta name="viemport" content="width=device-width, initial=scale=1.0">
-
-        <title> CNS CALÇADOS </title>
-        <link real="stylesheet" href="styles.css"> 
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-        <link real="stylesheet" href="styles1.css"> 
-    
-      
-    
-    </head>
-
-    <body>
-
-<header>
-
-<h1> CNS ONLINE</h1>
-
-<br>
-
-<h5> A CNS acompanha a moda em calçados e acessórios masculinos e é reconhecida pela beleza e qualidade que eles apresentam.
-    Esse resultado vem da parceria entre o departamento de desenvolvimento de produtos da CNS e fornecedores criteriosamente selecionados, que trazem a moda da Europa e dos EUA e desenvolvem modelos exclusivos, que passam por um rígido controle de qualidade antes de serem comercializados na rede CNS.<p>
-
-    </p>
-    
-    <br>
-    
-    Trabalhar com calçados exige uma postura segura e competência para corresponder à expectativa dos clientes.<p>
-
-    </p><br>
-    
-    Esse conceito já estava presente quando, em 1975, surgiu a LUIGI, no centro da cidade de São Paulo. A boa aceitação dos produtos, o sucesso de vendas dessa loja e a experiência adquirida abriram caminho para a expansão e abertura de novas lojas. Fiel ao público masculino, em 1990, foi inaugurada no Shopping Ibirapuera a Cia. Nacional de Sapatos. Com um layout de loja atraente e excelente qualidade de produtos, esse foi o primeiro nome adotado pela futura rede de lojas.<p></p>
-    <br>
-    Em São Paulo começava a era dos novos shoppings e a empresa soube aproveitar cada oportunidade de abrir um novo ponto-de-venda em cada um deles.
-    Com um número expressivo de lojas, sempre aprimorando seus produtos e acompanhando as tendências do mercado, em 1999 foi adotado um novo nome, que facilitasse a identificação pelo consumidor: CNS.<p> 
-
-    </p> <br>
-    
-    De lá pra cá, a rede se expandiu, e hoje são mais de 30 lojas espalhadas nas principais cidades do Brasil, além da loja virtual, que atende grande parte do território nacional.</h5>
-
-    <br>
-
-    <link rel="icon" href="public/favicon.ico"   href="%PUBLIC_URL%/icons/favicon.png" type="image/png">
-
-   
-    
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet">
-
-</header>
-    <nav>
+    <!-- Barra de navegação -->
+    <nav class="navbar">
         <ul>
-            <li><a href="#">Home</a></li> 
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Contato</a></li>
-        
+            <li><a href="#">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#destaques">Destaques</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
         </ul>
     </nav>
 
-    <h2>Conheça Nossos Produtos</h2>
+    <!-- Seção sobre -->
+    <section id="sobre" class="sobre">
+        <h2>Sobre a CNS</h2>
+        <p>A história da CNS começa quando, Luiz Flores Carrera ao renunciar seu cargo na indústria de alfaiataria que vinha enfrentando crises geradas pelo barateamento na produção de ternos, pediu 300 cruzeiros emprestados com sua sogra para comprar alguns modelos de sapatos masculinos.</p>
+        <p>Em 1975, surgiu a LUIGI, no centro da cidade de São Paulo. A boa aceitação dos produtos e o sucesso de vendas dessa loja abriram caminho para a expansão e abertura de novas unidades. Fiel ao público masculino, em 1990, foi inaugurada no Shopping Ibirapuera a Cia. Nacional de Sapatos, com um layout atraente e produtos de excelente qualidade.</p>
+        <p>De lá para cá, a CNS se consolidou como uma referência em calçados e acessórios masculinos, sempre acompanhando as tendências da moda e oferecendo produtos com estilo, design e qualidade.</p>
+    </section>
 
+    <!-- Seção de Destaques -->
+    <section id="destaques" class="destaques">
+        <h2>Destaques da Semana</h2>
+        <div class="destaques-grid">
+            <div class="produto">
+                <img src="images/sapato1.jpg" alt="Sapato Clássico">
+                <h3>Sapato Clássico</h3>
+                <p>O equilíbrio perfeito entre elegância e conforto.</p>
+            </div>
+            <div class="produto">
+                <img src="images/sapato2.jpg" alt="Sapato Casual">
+                <h3>Sapato Casual</h3>
+                <p>Design moderno, ideal para todas as ocasiões.</p>
+            </div>
+            <div class="produto">
+                <img src="images/sapato3.jpg" alt="Sapato Esportivo">
+                <h3>Sapato Esportivo</h3>
+                <p>Conforto e estilo para o dia a dia.</p>
+            </div>
+            <div class="produto">
+                <img src="images/sapato4.jpg" alt="Bota de Couro">
+                <h3>Bota de Couro</h3>
+                <p>Resistência e elegância para dias frios.</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="container">
-        <img src="imagem.jpg" alt="">
-    </div>
-    
+    <!-- Galeria de Produtos -->
+    <section id="produtos" class="produtos">
+        <h2>Conheça Nossos Produtos</h2>
+        <div class="galeria">
+            <img src="images/sapato1.jpg" alt="Sapato Masculino 1">
+            <img src="images/sapato2.jpg" alt="Sapato Masculino 2">
+            <img src="images/sapato3.jpg" alt="Sapato Masculino 3">
+            <img src="images/sapato4.jpg" alt="Sapato Masculino 4">
+        </div>
+    </section>
 
-    <div class="product-gallery">
-        <img src="images/sapato1.jpg" alt="Sapato Masculino 1" class="product-image">
-                <img src="images/sapato2.jpg" alt="Sapato Masculino 2" class="product-image">
-                <img src="images/sapato3.jpg" alt="Sapato Masculino 3" class="product-image">
-                <img src="images/sapato4.jpg" alt="Sapato Masculino 4" class="product-image">
-    </div> 
+    <!-- Seção de Depoimentos -->
+    <section id="depoimentos" class="depoimentos">
+        <h2>O que nossos clientes dizem</h2>
+        <div class="depoimentos-container">
+            <div class="depoimento">
+                <p>"Os sapatos da CNS são incríveis! Qualidade impecável e muito conforto!"</p>
+                <span>- João Silva</span>
+            </div>
+            <div class="depoimento">
+                <p>"Adorei a experiência de compra! Atendimento excelente e entrega rápida."</p>
+                <span>- Marcos Oliveira</span>
+            </div>
+            <div class="depoimento">
+                <p>"A variedade de modelos é impressionante. Sempre encontro o que procuro."</p>
+                <span>- Pedro Almeida</span>
+            </div>
+        </div>
+    </section>
 
-    <main>
-        <p>CNS Esta no Mercado Desde 1990 trabalhando para realsar a belesa Masculina. .</p>
-    </main>
+    <!-- Seção de Contato -->
+    <section id="contato" class="contato">
+        <h2>Entre em Contato</h2>
+        <p>Tem alguma dúvida ou deseja mais informações? Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
+        <form action="#" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </section>
 
+    <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
-    </footer>
+        <p>&copy; 2025 CNS. Todos os direitos reservados.</p>
+        <div class="redes-sociais">
+            <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="
+::contentReference[oaicite:0]{index=0}
 
-    <div id="root"></div>
-    
-    </body>
 
 
-</HTML>
+
+                            
