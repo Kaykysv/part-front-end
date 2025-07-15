@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Seu carrinho de compras na CNS Calçados. Veja os produtos escolhidos e finalize sua compra com segurança.">
+    <meta name="keywords" content="carrinho, compras, calçados masculinos, CNS, loja de calçados">
+    <meta name="author" content="CNS Calçados">
+    <link rel="canonical" href="https://www.cnscalcados.com.br/carrinho.html">
+    <meta property="og:title" content="Carrinho de Compras - CNS Calçados">
+    <meta property="og:description" content="Seu carrinho de compras na CNS Calçados. Veja os produtos escolhidos e finalize sua compra com segurança.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cnscalcados.com.br/carrinho.html">
+    <meta property="og:image" content="https://www.cnscalcados.com.br/imagens/sapato-classico.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Carrinho de Compras - CNS Calçados">
+    <meta name="twitter:description" content="Seu carrinho de compras na CNS Calçados. Veja os produtos escolhidos e finalize sua compra com segurança.">
+    <meta name="twitter:image" content="https://www.cnscalcados.com.br/imagens/sapato-classico.jpeg">
+    <title>Carrinho de Compras - CNS Calçados</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <style>
+        .carrinho-container {
+            max-width: 900px;
+            margin: 2.5rem auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            padding: 2rem 1.5rem;
+        }
+        .carrinho-titulo {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .carrinho-lista {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        .carrinho-lista th, .carrinho-lista td {
+            padding: 0.8rem 0.5rem;
+            text-align: left;
+        }
+        .carrinho-lista th {
+            border-bottom: 2px solid #eee;
+            font-size: 1.1rem;
+        }
+        .carrinho-lista td {
+            border-bottom: 1px solid #f2f2f2;
+            vertical-align: middle;
+        }
+        .carrinho-lista img {
+            width: 60px;
+            border-radius: 6px;
+        }
+        .carrinho-qtd {
+            width: 60px;
+        }
+        .carrinho-qtd input {
+            width: 40px;
+            text-align: center;
+            font-size: 1rem;
+            padding: 2px 4px;
+        }
+        .carrinho-remover {
+            color: #e53935;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .carrinho-total {
+            text-align: right;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .carrinho-vazio {
+            text-align: center;
+            color: #888;
+            font-size: 1.15rem;
+            margin: 2rem 0;
+        }
+        .btn-finalizar {
+            display: block;
+            margin: 0 auto;
+            background: #207245;
+            color: #fff;
+            padding: 0.8rem 2.2rem;
+            border-radius: 6px;
+            font-size: 1.15rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-finalizar:hover {
+            background: #155a36;
+        }
+    </style>
+</head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Carrinho de Compras</h1>
+            <a href="produtos.html" class="btn">Continuar comprando</a>
+        </div>
+        <div class="carrinho-header">
+            <a href="carrinho.html" aria-label="Ver carrinho">
+                <img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png" alt="Carrinho">
+                <span id="badge-carrinho">0</span>
+            </a>
+        </div>
+        <div id="login-header" style="position:absolute;top:24px;right:120px;z-index:21;font-size:1.08rem;">
+            <a id="login-link" href="login.html" class="login-destaque"><span class="login-icone" aria-hidden="true">&#128100;</span> Entrar</a>
+        </div>
+    </header>
+    <main>
+        <div class="carrinho-container">
+            <div class="carrinho-titulo">Seu Carrinho</div>
+            <div id="carrinho-vazio" class="carrinho-vazio" style="display:none;">Seu carrinho está vazio.</div>
+            <table class="carrinho-lista" id="tabela-carrinho" style="display:none;">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th></th>
+                        <th>Preço</th>
+                        <th>Qtd</th>
+                        <th>Subtotal</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="carrinho-itens"></tbody>
+            </table>
+            <div class="carrinho-total" id="carrinho-total" style="display:none;"></div>
+            <div id="cupom-area" style="display:none;margin-bottom:1.2rem;">
+                <form id="form-cupom" style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
+                    <label for="cupom-input" style="font-weight:500;">Cupom de desconto:</label>
+                    <input type="text" id="cupom-input" name="cupom-input" placeholder="Digite o cupom" style="padding:0.4rem 0.7rem;border-radius:5px;border:1px solid #ccc;min-width:120px;">
+                    <button type="submit" class="btn" style="padding:0.4rem 1.1rem;">Aplicar</button>
+                </form>
+                <div id="cupom-msg" style="margin-top:0.5rem;font-weight:500;"></div>
+            </div>
+            <button class="btn-finalizar" id="btn-finalizar" style="display:none;">Finalizar Compra</button>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>CNS Calçados</h3>
+                    <p>Elegância e qualidade desde 1990</p>
+                    <p>&copy; 2025 CNS. Todos os direitos reservados.</p>
+                </div>
+                <div class="redes-sociais">
+                    <h4>Siga-nos</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Siga-nos no Instagram">
+                            <img src="imagens/Instagram.png" alt="Instagram">
+                        </a>
+                        <a href="#" aria-label="Siga-nos no Facebook">
+                            <img src="imagens/facebook.png" alt="Facebook">
+                        </a>
+                    </div>
+                    <div class="footer-links" style="margin-top:1.2rem;">
+                        <a href="sobre.html">Sobre a Empresa</a> |
+                        <a href="trocas-devolucoes.html">Trocas/Devoluções</a> |
+                        <a href="politica-privacidade.html">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="msg-carrinho" style="display:none;position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#e53935;color:#fff;padding:1rem 2rem;border-radius:8px;z-index:9999;font-size:1.1rem;box-shadow:0 2px 10px rgba(229,57,53,0.13);font-weight:500;">Produto removido do carrinho!</div>
+    <script>
+    function atualizarBadgeCarrinho() {
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        let badge = document.getElementById('badge-carrinho');
+        if (badge) {
+            if (carrinho.length > 0) {
+                badge.textContent = carrinho.length;
+                badge.style.display = 'inline-block';
+            } else {
+                badge.style.display = 'none';
+            }
+        }
+    }
+    document.addEventListener('DOMContentLoaded', atualizarBadgeCarrinho);
+    window.addEventListener('storage', atualizarBadgeCarrinho);
+
+    let descontoCupom = 0;
+    function renderizarCarrinho() {
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        const tabela = document.getElementById('tabela-carrinho');
+        const corpo = document.getElementById('carrinho-itens');
+        const totalDiv = document.getElementById('carrinho-total');
+        const vazioDiv = document.getElementById('carrinho-vazio');
+        const btnFinalizar = document.getElementById('btn-finalizar');
+        const cupomArea = document.getElementById('cupom-area');
+        corpo.innerHTML = '';
+        if (carrinho.length === 0) {
+            tabela.style.display = 'none';
+            totalDiv.style.display = 'none';
+            btnFinalizar.style.display = 'none';
+            vazioDiv.style.display = 'block';
+            if (cupomArea) cupomArea.style.display = 'none';
+            return;
+        }
+        tabela.style.display = '';
+        totalDiv.style.display = '';
+        btnFinalizar.style.display = '';
+        vazioDiv.style.display = 'none';
+        if (cupomArea) cupomArea.style.display = '';
+        let total = 0;
+        carrinho.forEach((item, idx) => {
+            const subtotal = item.preco * item.quantidade;
+            total += subtotal;
+            corpo.innerHTML += `
+                <tr>
+                    <td><img src="${item.imagem}" alt="${item.nome}"></td>
+                    <td>${item.nome}</td>
+                    <td>R$ ${item.preco.toFixed(2).replace('.', ',')}</td>
+                    <td class="carrinho-qtd"><input type="number" min="1" value="${item.quantidade}" data-idx="${idx}" style="width:40px;"></td>
+                    <td>R$ ${(subtotal).toFixed(2).replace('.', ',')}</td>
+                    <td><button class="carrinho-remover" data-idx="${idx}" title="Remover">&times;</button></td>
+                </tr>
+            `;
+        });
+        let totalFinal = total;
+        if (descontoCupom > 0) {
+            totalFinal = total * (1 - descontoCupom);
+            totalDiv.innerHTML = `<span style='color:#207245;'>Cupom aplicado: -${Math.round(descontoCupom*100)}%</span><br>Total: <strong>R$ ${totalFinal.toFixed(2).replace('.', ',')}</strong>`;
+        } else {
+            totalDiv.textContent = `Total: R$ ${total.toFixed(2).replace('.', ',')}`;
+        }
+    }
+
+    function atualizarQuantidade(idx, novaQtd) {
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        carrinho[idx].quantidade = novaQtd;
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        renderizarCarrinho();
+        atualizarBadgeCarrinho();
+    }
+
+    function removerItem(idx) {
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        carrinho.splice(idx, 1);
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        renderizarCarrinho();
+        atualizarBadgeCarrinho();
+        mostrarMsgRemocao();
+    }
+
+    function mostrarMsgRemocao() {
+        const msg = document.getElementById('msg-carrinho');
+        if (msg) {
+            msg.style.display = 'block';
+            setTimeout(() => { msg.style.display = 'none'; }, 1800);
+        }
+    }
+
+    function atualizarLoginHeader() {
+        const user = JSON.parse(localStorage.getItem('usuario_logado_cns'));
+        const link = document.getElementById('login-link');
+        if (user && user.nome) {
+            link.textContent = user.nome.split(' ')[0];
+            link.href = 'cliente.html';
+        } else {
+            link.textContent = 'Entrar';
+            link.href = 'login.html';
+        }
+    }
+    document.addEventListener('DOMContentLoaded', atualizarLoginHeader);
+    window.addEventListener('storage', atualizarLoginHeader);
+
+    document.addEventListener('DOMContentLoaded', function() {
+        renderizarCarrinho();
+        document.getElementById('carrinho-itens').addEventListener('input', function(e) {
+            if (e.target.type === 'number') {
+                const idx = e.target.getAttribute('data-idx');
+                let novaQtd = parseInt(e.target.value);
+                if (isNaN(novaQtd) || novaQtd < 1) novaQtd = 1;
+                atualizarQuantidade(idx, novaQtd);
+            }
+        });
+        document.getElementById('carrinho-itens').addEventListener('click', function(e) {
+            if (e.target.classList.contains('carrinho-remover')) {
+                const idx = e.target.getAttribute('data-idx');
+                removerItem(idx);
+            }
+        });
+        document.getElementById('btn-finalizar').addEventListener('click', function() {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            if (carrinho.length > 0) {
+                localStorage.setItem('carrinho_pagamento', JSON.stringify(carrinho));
+                window.location.href = 'pagamento.html?carrinho=1';
+            }
+        });
+        const formCupom = document.getElementById('form-cupom');
+        if (formCupom) {
+            formCupom.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const cupom = document.getElementById('cupom-input').value.trim().toUpperCase();
+                const msg = document.getElementById('cupom-msg');
+                if (cupom === 'DESCONTO10') {
+                    descontoCupom = 0.10;
+                    msg.textContent = 'Cupom aplicado! Você ganhou 10% de desconto.';
+                    msg.style.color = '#207245';
+                } else {
+                    descontoCupom = 0;
+                    msg.textContent = 'Cupom inválido.';
+                    msg.style.color = '#e53935';
+                }
+                renderizarCarrinho();
+            });
+        }
+    });
+    </script>
+    <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/64e4e6e094cf5d49dc6b7b7a/1h8k9kq2g';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+</body>
+</html> 

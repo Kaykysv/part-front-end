@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta - CNS Calçados</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .cliente-container {
+            max-width: 500px;
+            margin: 3rem auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            padding: 2.2rem 1.5rem;
+        }
+        .cliente-container h1 {
+            text-align: center;
+            margin-bottom: 1.2rem;
+        }
+        .cliente-info {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .cliente-pedidos {
+            margin-bottom: 2rem;
+        }
+        .cliente-pedidos table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .cliente-pedidos th, .cliente-pedidos td {
+            padding: 0.7rem 0.5rem;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+        .btn-logout {
+            display: block;
+            margin: 0 auto;
+            background: #e53935;
+            color: #fff;
+            padding: 0.7rem 2rem;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-logout:hover {
+            background: #b00020;
+        }
+    </style>
+</head>
+<body>
+    <div class="cliente-container">
+        <h1>Minha Conta</h1>
+        <div class="cliente-info">
+            <span id="cliente-nome"></span>
+        </div>
+        <div class="cliente-pedidos">
+            <h2>Meus Pedidos</h2>
+            <div id="pedidos-lista"></div>
+        </div>
+        <button class="btn-logout" id="btn-logout">Sair</button>
+    </div>
+    <script>
+    function getUsuarioLogado() {
+        return JSON.parse(localStorage.getItem('usuario_logado_cns'));
+    }
+    function getPedidosUsuario(email) {
+        // Simulação: pedidos salvos no localStorage por e-mail
+        return JSON.parse(localStorage.getItem('pedidos_' + email)) || [];
+    }
+    function renderPedidos(pedidos) {
+        if (!pedidos.length) return '<p>Você ainda não realizou nenhum pedido.</p>';
+        let html = '<table><thead><tr><th>Pedido</th><th>Data</th><th>Total</th></tr></thead><tbody>';
+        pedidos.forEach((p, i) => {
+            html += `<tr><td>#${i+1}</td><td>${p.data}</td><td>R$ ${p.total.toFixed(2).replace('.', ',')}</td></tr>`;
+        });
+        html += '</tbody></table>';
+        return html;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        const user = getUsuarioLogado();
+        if (!user) {
+            window.location.href = 'login.html';
+            return;
+        }
+        document.getElementById('cliente-nome').textContent = `Olá, ${user.nome}!`;
+        // Simulação: exibe pedidos do localStorage
+        const pedidos = getPedidosUsuario(user.email);
+        document.getElementById('pedidos-lista').innerHTML = renderPedidos(pedidos);
+        document.getElementById('btn-logout').onclick = function() {
+            localStorage.removeItem('usuario_logado_cns');
+            window.location.href = 'login.html';
+        };
+    });
+    </script>
+</body>
+</html> 

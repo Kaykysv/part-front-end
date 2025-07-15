@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pedido confirmado na CNS Calçados. Veja o resumo da sua compra e acompanhe a entrega.">
+    <meta name="keywords" content="pedido confirmado, compra, calçados masculinos, CNS, loja de calçados">
+    <meta name="author" content="CNS Calçados">
+    <link rel="canonical" href="https://www.cnscalcados.com.br/confirmacao.html">
+    <meta property="og:title" content="Pedido Confirmado - CNS Calçados">
+    <meta property="og:description" content="Pedido confirmado na CNS Calçados. Veja o resumo da sua compra e acompanhe a entrega.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cnscalcados.com.br/confirmacao.html">
+    <meta property="og:image" content="https://www.cnscalcados.com.br/imagens/sapato-classico.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pedido Confirmado - CNS Calçados">
+    <meta name="twitter:description" content="Pedido confirmado na CNS Calçados. Veja o resumo da sua compra e acompanhe a entrega.">
+    <meta name="twitter:image" content="https://www.cnscalcados.com.br/imagens/sapato-classico.jpeg">
+    <title>Pedido Confirmado - CNS Calçados</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <style>
+        .confirmacao-container {
+            max-width: 600px;
+            margin: 3rem auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+        .confirmacao-container h1 {
+            color: #207245;
+            margin-bottom: 1.2rem;
+        }
+        .pedido-resumo {
+            margin: 2rem 0 1.5rem 0;
+            text-align: left;
+        }
+        .pedido-resumo table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        .pedido-resumo th, .pedido-resumo td {
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+        }
+        .pedido-resumo th {
+            border-bottom: 2px solid #eee;
+        }
+        .pedido-resumo td {
+            border-bottom: 1px solid #f2f2f2;
+        }
+        .pedido-resumo td:last-child, .pedido-resumo th:last-child {
+            text-align: right;
+        }
+        .pedido-total {
+            text-align: right;
+            font-weight: 600;
+            font-size: 1.15rem;
+        }
+        .btn-voltar {
+            background: #207245;
+            color: #fff;
+            padding: 0.7rem 2rem;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: background 0.2s;
+        }
+        .btn-voltar:hover {
+            background: #155a36;
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Pedido Confirmado!</h1>
+        </div>
+        <div class="carrinho-header">
+            <a href="carrinho.html" aria-label="Ver carrinho">
+                <img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png" alt="Carrinho">
+                <span id="badge-carrinho">0</span>
+            </a>
+        </div>
+        <div id="login-header" style="position:absolute;top:24px;right:120px;z-index:21;font-size:1.08rem;">
+            <a id="login-link" href="login.html" class="login-destaque"><span class="login-icone" aria-hidden="true">&#128100;</span> Entrar</a>
+        </div>
+    </header>
+    <main>
+        <div class="confirmacao-container">
+            <h2>Obrigado pela sua compra!</h2>
+            <p>Seu pedido foi recebido com sucesso e está sendo processado.<br>
+            Em breve você receberá um e-mail com os detalhes e o acompanhamento da entrega.</p>
+            <div class="pedido-resumo" id="pedido-resumo"></div>
+            <button class="btn-voltar" onclick="window.location.href='produtos.html'">Voltar para a loja</button>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>CNS Calçados</h3>
+                    <p>Elegância e qualidade desde 1990</p>
+                    <p>&copy; 2025 CNS. Todos os direitos reservados.</p>
+                </div>
+                <div class="redes-sociais">
+                    <h4>Siga-nos</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Siga-nos no Instagram">
+                            <img src="imagens/Instagram.png" alt="Instagram">
+                        </a>
+                        <a href="#" aria-label="Siga-nos no Facebook">
+                            <img src="imagens/facebook.png" alt="Facebook">
+                        </a>
+                    </div>
+                    <div class="footer-links" style="margin-top:1.2rem;">
+                        <a href="sobre.html">Sobre a Empresa</a> |
+                        <a href="trocas-devolucoes.html">Trocas/Devoluções</a> |
+                        <a href="politica-privacidade.html">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    function atualizarBadgeCarrinho() {
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        let badge = document.getElementById('badge-carrinho');
+        if (badge) {
+            if (carrinho.length > 0) {
+                badge.textContent = carrinho.length;
+                badge.style.display = 'inline-block';
+            } else {
+                badge.style.display = 'none';
+            }
+        }
+    }
+    document.addEventListener('DOMContentLoaded', atualizarBadgeCarrinho);
+    window.addEventListener('storage', atualizarBadgeCarrinho);
+
+    // Exibe resumo do pedido
+    document.addEventListener('DOMContentLoaded', function() {
+        const pedido = JSON.parse(localStorage.getItem('pedido_confirmado'));
+        if (pedido && pedido.produtos && pedido.produtos.length > 0) {
+            let html = '<table><thead><tr><th>Produto</th><th>Qtd</th><th>Subtotal</th></tr></thead><tbody>';
+            pedido.produtos.forEach(item => {
+                html += `<tr><td>${item.nome}</td><td style='text-align:center;'>${item.quantidade}</td><td style='text-align:right;'>R$ ${(item.preco*item.quantidade).toFixed(2).replace('.', ',')}</td></tr>`;
+            });
+            html += `</tbody></table><div class='pedido-total'>Total: R$ ${pedido.total.toFixed(2).replace('.', ',')}</div>`;
+            document.getElementById('pedido-resumo').innerHTML = html;
+            localStorage.removeItem('pedido_confirmado');
+        } else {
+            document.getElementById('pedido-resumo').innerHTML = '<p>Nenhum pedido encontrado.</p>';
+        }
+    });
+    </script>
+    <script>
+function atualizarLoginHeader() {
+    const user = JSON.parse(localStorage.getItem('usuario_logado_cns'));
+    const link = document.getElementById('login-link');
+    if (user && user.nome) {
+        link.textContent = user.nome.split(' ')[0];
+        link.href = 'cliente.html';
+    } else {
+        link.textContent = 'Entrar';
+        link.href = 'login.html';
+    }
+}
+document.addEventListener('DOMContentLoaded', atualizarLoginHeader);
+window.addEventListener('storage', atualizarLoginHeader);
+</script>
+    <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/64e4e6e094cf5d49dc6b7b7a/1h8k9kq2g';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+</body>
+</html> 

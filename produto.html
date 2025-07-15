@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalhes do produto CNS Calçados: elegância, conforto e qualidade em calçados masculinos. Veja fotos, preço e avaliações.">
+    <meta name="keywords" content="detalhes, produto, calçados masculinos, sapatos, botas, tênis, CNS, loja de calçados">
+    <meta name="author" content="CNS Calçados">
+    <link rel="canonical" href="https://www.cnscalcados.com.br/produto.html">
+    <meta property="og:title" content="Detalhes do Produto - CNS Calçados">
+    <meta property="og:description" content="Detalhes do produto CNS Calçados: elegância, conforto e qualidade em calçados masculinos. Veja fotos, preço e avaliações.">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://www.cnscalcados.com.br/produto.html">
+    <meta property="og:image" content="https://www.cnscalcados.com.br/imagens/sapato-classico.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Detalhes do Produto - CNS Calçados">
+    <meta name="twitter:description" content="Detalhes do produto CNS Calçados: elegância, conforto e qualidade em calçados masculinos. Veja fotos, preço e avaliações.">
+    <meta name="twitter:image" content="https://www.cnscalcados.com.br/imagens/sapato-classico.jpeg">
+    <title>Detalhes do Produto - CNS Calçados</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <style>
+        .produto-detalhe-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            padding: 2rem;
+            display: flex;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .galeria-produto {
+            flex: 1 1 320px;
+            min-width: 280px;
+        }
+        .galeria-produto img {
+            width: 100%;
+            max-width: 340px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+        }
+        .produto-info {
+            flex: 2 1 340px;
+            min-width: 260px;
+        }
+        .produto-info h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .produto-preco {
+            font-size: 1.4rem;
+            color: #207245;
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+        .produto-descricao {
+            font-size: 1.08rem;
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+        .avaliacoes {
+            margin-top: 2.5rem;
+            background: #f8f8f8;
+            border-radius: 8px;
+            padding: 1.2rem 1rem;
+        }
+        .avaliacoes h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0.7rem;
+        }
+        .avaliacao-item {
+            border-bottom: 1px solid #eee;
+            padding: 0.7rem 0;
+        }
+        .avaliacao-item:last-child {
+            border-bottom: none;
+        }
+        .btn-comprar {
+            display: inline-block;
+            background: #207245;
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+        .btn-comprar:hover {
+            background: #155a36;
+        }
+        .carrinho-header {
+            position: absolute;
+            top: 24px;
+            right: 48px;
+            z-index: 20;
+        }
+        .carrinho-header a {
+            display: inline-block;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+            padding: 12px;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .carrinho-header a:hover {
+            box-shadow: 0 4px 18px rgba(32,114,69,0.18);
+            transform: scale(1.08);
+        }
+        .carrinho-header img {
+            width: 38px;
+            height: 38px;
+        }
+        #badge-carrinho {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            background: #e53935;
+            color: #fff;
+            font-size: 1rem;
+            padding: 2px 8px;
+            border-radius: 50%;
+            min-width: 22px;
+            text-align: center;
+            display: none;
+            font-weight: bold;
+            box-shadow: 0 1px 4px rgba(229,57,53,0.18);
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Detalhes do Produto</h1>
+            <a href="produtos.html" class="btn">Voltar para Produtos</a>
+        </div>
+        <div class="carrinho-header">
+            <a href="carrinho.html" aria-label="Ver carrinho">
+                <img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png" alt="Carrinho">
+                <span id="badge-carrinho">0</span>
+            </a>
+        </div>
+        <div id="login-header" style="position:absolute;top:24px;right:120px;z-index:21;font-size:1.08rem;">
+            <a id="login-link" href="login.html" class="login-destaque"><span class="login-icone" aria-hidden="true">&#128100;</span> Entrar</a>
+        </div>
+    </header>
+    <main>
+        <div class="produto-detalhe-container">
+            <div class="galeria-produto">
+                <img id="img-produto" src="" alt="Imagem do produto">
+                <!-- Espaço para mais imagens no futuro -->
+            </div>
+            <div class="produto-info">
+                <h1 id="nome-produto">Produto</h1>
+                <div class="produto-preco" id="preco-produto"></div>
+                <div class="produto-descricao" id="descricao-produto"></div>
+                <a id="btn-comprar" href="#" class="btn-comprar">Comprar</a>
+                <button class="btn btn-carrinho" id="btn-add-carrinho" style="margin-left:1rem;">Adicionar ao carrinho</button>
+            </div>
+        </div>
+        <div class="avaliacoes">
+            <h2>Avaliações dos clientes</h2>
+            <div id="lista-avaliacoes">
+                <div class="avaliacao-item">Nenhuma avaliação ainda. Seja o primeiro a avaliar!</div>
+            </div>
+            <form id="form-avaliacao" style="margin-top:1.5rem;">
+                <label for="nome-avaliador" style="font-weight:500;">Seu nome:</label><br>
+                <input type="text" id="nome-avaliador" name="nome-avaliador" required style="margin-bottom:0.5rem;padding:0.4rem 0.7rem;border-radius:5px;border:1px solid #ccc;min-width:180px;"><br>
+                <label style="font-weight:500;">Nota:</label>
+                <span id="estrelas-avaliacao">
+                    <span data-estrela="1" style="cursor:pointer;font-size:1.3rem;">☆</span>
+                    <span data-estrela="2" style="cursor:pointer;font-size:1.3rem;">☆</span>
+                    <span data-estrela="3" style="cursor:pointer;font-size:1.3rem;">☆</span>
+                    <span data-estrela="4" style="cursor:pointer;font-size:1.3rem;">☆</span>
+                    <span data-estrela="5" style="cursor:pointer;font-size:1.3rem;">☆</span>
+                </span><br>
+                <input type="hidden" id="nota-avaliacao" name="nota-avaliacao" value="0">
+                <label for="comentario-avaliacao" style="font-weight:500;">Comentário:</label><br>
+                <textarea id="comentario-avaliacao" name="comentario-avaliacao" rows="2" required style="width:100%;max-width:400px;padding:0.4rem 0.7rem;border-radius:5px;border:1px solid #ccc;margin-bottom:0.5rem;"></textarea><br>
+                <button type="submit" class="btn">Enviar Avaliação</button>
+            </form>
+            <div id="msg-avaliacao" style="display:none;margin-top:0.7rem;font-weight:500;color:#207245;"></div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>CNS Calçados</h3>
+                    <p>Elegância e qualidade desde 1990</p>
+                    <p>&copy; 2025 CNS. Todos os direitos reservados.</p>
+                </div>
+                <div class="redes-sociais">
+                    <h4>Siga-nos</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Siga-nos no Instagram">
+                            <img src="imagens/Instagram.png" alt="Instagram">
+                        </a>
+                        <a href="#" aria-label="Siga-nos no Facebook">
+                            <img src="imagens/facebook.png" alt="Facebook">
+                        </a>
+                    </div>
+                    <div class="footer-links" style="margin-top:1.2rem;">
+                        <a href="sobre.html">Sobre a Empresa</a> |
+                        <a href="trocas-devolucoes.html">Trocas/Devoluções</a> |
+                        <a href="politica-privacidade.html">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="msg-carrinho" style="display:none;position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#207245;color:#fff;padding:1rem 2rem;border-radius:8px;z-index:9999;font-size:1.1rem;box-shadow:0 2px 10px rgba(32,114,69,0.13);font-weight:500;">Produto adicionado ao carrinho!</div>
+    <script>
+    // Dados dos produtos (poderia vir de um banco futuramente)
+    const produtos = {
+        'Sapato Clássico': {
+            preco: 259.90,
+            imagem: 'imagens/sapato-classico.jpeg',
+            descricao: 'Sapato clássico em couro preto, ideal para ocasiões formais e ambientes de trabalho. Conforto e elegância em cada detalhe.'
+        },
+        'Sapato Casual': {
+            preco: 249.90,
+            imagem: 'imagens/sapato-casual.jpg',
+            descricao: 'Sapato casual em couro marrom, perfeito para o dia a dia e eventos descontraídos. Design moderno e confortável.'
+        },
+        'Sapato Esportivo': {
+            preco: 199.90,
+            imagem: 'imagens/sapato-esportivo.jpg',
+            descricao: 'Sapato esportivo moderno, com solado flexível e design leve. Ideal para quem busca praticidade e estilo.'
+        },
+        'Bota de Couro': {
+            preco: 399.90,
+            imagem: 'imagens/bota-couro.jpg',
+            descricao: 'Bota de couro legítimo, resistente e elegante. Perfeita para dias frios e looks sofisticados.'
+        },
+        'Sapato Social': {
+            preco: 279.90,
+            imagem: 'imagens/sapato3.jpg',
+            descricao: 'Sapato social elegante, acabamento premium e conforto para eventos especiais.'
+        },
+        'Tênis Casual': {
+            preco: 189.90,
+            imagem: 'imagens/sapato4.jpg',
+            descricao: 'Tênis casual confortável, ideal para passeios e uso diário. Leveza e estilo para todas as horas.'
+        }
+    };
+    // Pega o nome do produto da URL
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+    const nomeProduto = decodeURIComponent(getQueryParam('produto') || '').replace(/\+/g, ' ');
+    const produto = produtos[nomeProduto];
+    if (produto) {
+        document.getElementById('nome-produto').textContent = nomeProduto;
+        document.getElementById('preco-produto').textContent = `R$ ${produto.preco.toFixed(2).replace('.', ',')}`;
+        document.getElementById('img-produto').src = produto.imagem;
+        document.getElementById('img-produto').alt = nomeProduto;
+        document.getElementById('descricao-produto').textContent = produto.descricao;
+        document.getElementById('btn-comprar').href = `pagamento.html?produto=${encodeURIComponent(nomeProduto)}&preco=${produto.preco}`;
+    } else {
+        document.getElementById('nome-produto').textContent = 'Produto não encontrado';
+        document.getElementById('preco-produto').textContent = '';
+        document.getElementById('img-produto').src = '';
+        document.getElementById('descricao-produto').textContent = '';
+        document.getElementById('btn-comprar').style.display = 'none';
+    }
+    document.getElementById('btn-add-carrinho').addEventListener('click', function() {
+        if (produto) {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            carrinho.push({ nome: nomeProduto, preco: produto.preco, imagem: produto.imagem, quantidade: 1 });
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            mostrarMsgCarrinho();
+        }
+    });
+    function mostrarMsgCarrinho() {
+        const msg = document.getElementById('msg-carrinho');
+        if (msg) {
+            msg.style.display = 'block';
+            setTimeout(() => { msg.style.display = 'none'; }, 1800);
+        }
+    }
+    function atualizarBadgeCarrinho() {
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        let badge = document.getElementById('badge-carrinho');
+        if (badge) {
+            if (carrinho.length > 0) {
+                badge.textContent = carrinho.length;
+                badge.style.display = 'inline-block';
+            } else {
+                badge.style.display = 'none';
+            }
+        }
+    }
+    document.addEventListener('DOMContentLoaded', atualizarBadgeCarrinho);
+    window.addEventListener('storage', atualizarBadgeCarrinho);
+    </script>
+    <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/64e4e6e094cf5d49dc6b7b7a/1h8k9kq2g';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+</body>
+</html> 

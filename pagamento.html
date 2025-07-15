@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Finalize sua compra na CNS Calçados com segurança, conforto e praticidade. Loja oficial.">
+    <meta name="keywords" content="pagamento, finalizar compra, calçados masculinos, CNS, loja de calçados">
+    <meta name="author" content="CNS Calçados">
+    <link rel="canonical" href="https://www.cnscalcados.com.br/pagamento.html">
+    <meta property="og:title" content="Pagamento - CNS Calçados">
+    <meta property="og:description" content="Finalize sua compra na CNS Calçados com segurança, conforto e praticidade. Loja oficial.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cnscalcados.com.br/pagamento.html">
+    <meta property="og:image" content="https://www.cnscalcados.com.br/imagens/sapato-classico.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pagamento - CNS Calçados">
+    <meta name="twitter:description" content="Finalize sua compra na CNS Calçados com segurança, conforto e praticidade. Loja oficial.">
+    <meta name="twitter:image" content="https://www.cnscalcados.com.br/imagens/sapato-classico.jpeg">
+    <title>Pagamento - CNS Calçados</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <style>
+        .resumo-box {
+            background: #f8f8f8;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        .pagamento-form {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+        }
+        .pagamento-icons {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+        .pagamento-icons img {
+            height: 32px;
+            width: auto;
+            opacity: 0.85;
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .btn[disabled] {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        .spinner {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 3px solid #ccc;
+            border-top: 3px solid #333;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .success-message {
+            background: #e6ffed;
+            color: #207245;
+            border: 1px solid #b7e4c7;
+            border-radius: 6px;
+            padding: 1.5rem 1rem;
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 1.15rem;
+        }
+        .error-message {
+            color: #b00020;
+            font-size: 0.98rem;
+            margin-top: 0.2rem;
+        }
+        .pagamento-form select {
+            width: 100%;
+            padding: 0.6rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            background: #fafafa;
+            color: #333;
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+        }
+        .pagamento-form select:invalid {
+            color: #888;
+            font-style: italic;
+        }
+        .pagamento-form option[disabled] {
+            color: #aaa;
+            font-style: italic;
+        }
+        .carrinho-header {
+            position: absolute;
+            top: 24px;
+            right: 48px;
+            z-index: 20;
+        }
+        .carrinho-header a {
+            display: inline-block;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+            padding: 12px;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .carrinho-header a:hover {
+            box-shadow: 0 4px 18px rgba(32,114,69,0.18);
+            transform: scale(1.08);
+        }
+        .carrinho-header img {
+            width: 38px;
+            height: 38px;
+        }
+        #badge-carrinho {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            background: #e53935;
+            color: #fff;
+            font-size: 1rem;
+            padding: 2px 8px;
+            border-radius: 50%;
+            min-width: 22px;
+            text-align: center;
+            display: none;
+            font-weight: bold;
+            box-shadow: 0 1px 4px rgba(229,57,53,0.18);
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Finalizar Compra</h1>
+            <a href="produtos.html" class="btn">Voltar para Produtos</a>
+        </div>
+        <div class="carrinho-header">
+            <a href="carrinho.html" aria-label="Ver carrinho">
+                <img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png" alt="Carrinho">
+                <span id="badge-carrinho">0</span>
+            </a>
+        </div>
+        <div id="login-header" style="position:absolute;top:24px;right:120px;z-index:21;font-size:1.08rem;">
+            <a id="login-link" href="login.html" class="login-destaque"><span class="login-icone" aria-hidden="true">&#128100;</span> Entrar</a>
+        </div>
+    </header>
+    <main>
+        <section class="container" style="max-width: 600px; margin: 2rem auto;">
+            <h2>Resumo do Pedido</h2>
+            <div id="resumo-pedido"></div>
+            <div class="pagamento-icons">
+                <img src="https://img.icons8.com/color/48/000000/credit-card.png" alt="Cartão de Crédito" title="Cartão de Crédito">
+                <img src="https://img.icons8.com/color/48/000000/boleto-bankario.png" alt="Boleto Bancário" title="Boleto Bancário">
+                <img src="https://img.icons8.com/color/48/000000/pix.png" alt="PIX" title="PIX">
+            </div>
+            <form id="form-pagamento" class="pagamento-form" novalidate>
+                <div class="form-group">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                    <div id="nome-erro" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <div id="email-erro" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" maxlength="9" pattern="\d{5}-?\d{3}" required placeholder="00000-000">
+                    <div id="cep-erro" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="rua">Rua:</label>
+                    <input type="text" id="rua" name="rua" required>
+                    <div id="rua-erro" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="numero">Número:</label>
+                    <input type="text" id="numero" name="numero" required>
+                    <div id="numero-erro" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="complemento">Complemento:</label>
+                    <input type="text" id="complemento" name="complemento">
+                </div>
+                <div class="form-group">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" id="bairro" name="bairro" required>
+                    <div id="bairro-erro" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" required>
+                    <div id="cidade-erro" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" name="estado" maxlength="2" required placeholder="UF">
+                    <div id="estado-erro" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="pagamento">Forma de pagamento:</label>
+                    <div style="font-size:0.97rem; color:#666; margin-bottom:0.2rem;">Selecione a forma de pagamento desejada:</div>
+                    <select id="pagamento" name="pagamento" required>
+                        <option value="" disabled selected hidden>Selecione</option>
+                        <option value="cartao">Cartão de Crédito</option>
+                        <option value="boleto">Boleto Bancário</option>
+                        <option value="pix">PIX</option>
+                    </select>
+                    <div id="pagamento-erro" class="error-message"></div>
+                </div>
+                <button type="submit" class="btn" id="btn-finalizar">Finalizar Compra</button>
+                <div id="processando" style="display:none; margin-top:1rem;"><span class="spinner"></span>Processando pagamento...</div>
+            </form>
+            <div id="mensagem-sucesso" style="display:none;"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>CNS Calçados</h3>
+                    <p>Elegância e qualidade desde 1990</p>
+                    <p>&copy; 2025 CNS. Todos os direitos reservados.</p>
+                </div>
+                <div class="redes-sociais">
+                    <h4>Siga-nos</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Siga-nos no Instagram">
+                            <img src="imagens/Instagram.png" alt="Instagram">
+                        </a>
+                        <a href="#" aria-label="Siga-nos no Facebook">
+                            <img src="imagens/facebook.png" alt="Facebook">
+                        </a>
+                    </div>
+                    <div class="footer-links" style="margin-top:1.2rem;">
+                        <a href="sobre.html">Sobre a Empresa</a> |
+                        <a href="trocas-devolucoes.html">Trocas/Devoluções</a> |
+                        <a href="politica-privacidade.html">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    // Pega os parâmetros da URL
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    const carrinhoFlag = getQueryParam('carrinho');
+    let produtosPedido = [];
+    let totalPedido = 0;
+    if (carrinhoFlag) {
+        // Pega todos os itens do carrinho
+        produtosPedido = JSON.parse(localStorage.getItem('carrinho_pagamento')) || [];
+        totalPedido = produtosPedido.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
+        let html = '<table style="width:100%;margin-bottom:1rem;"><thead><tr><th style="text-align:left;">Produto</th><th>Qtd</th><th>Subtotal</th></tr></thead><tbody>';
+        produtosPedido.forEach(item => {
+            html += `<tr><td>${item.nome}</td><td style='text-align:center;'>${item.quantidade}</td><td style='text-align:right;'>R$ ${(item.preco*item.quantidade).toFixed(2).replace('.', ',')}</td></tr>`;
+        });
+        html += `</tbody></table><div style='text-align:right;font-weight:600;font-size:1.15rem;'>Total: R$ ${totalPedido.toFixed(2).replace('.', ',')}</div>`;
+        document.getElementById('resumo-pedido').innerHTML = html;
+    } else {
+        // Pedido de um produto só
+        const produto = getQueryParam('produto') || 'Produto não informado';
+        const preco = getQueryParam('preco') ? parseFloat(getQueryParam('preco')) : 0;
+        produtosPedido = [{ nome: produto, preco, quantidade: 1 }];
+        totalPedido = preco;
+        document.getElementById('resumo-pedido').innerHTML = `<strong>Produto:</strong> ${produto}<br><strong>Preço:</strong> R$ ${preco.toFixed(2).replace('.', ',')}`;
+    }
+
+    // Validação amigável
+    function validarCampos() {
+        let valido = true;
+        // Limpa erros
+        [
+            'nome','email','cep','rua','numero','bairro','cidade','estado','pagamento'
+        ].forEach(id => {
+            const erro = document.getElementById(id+'-erro');
+            if (erro) erro.textContent = '';
+        });
+        // Nome
+        const nome = document.getElementById('nome').value.trim();
+        if (!nome) {
+            document.getElementById('nome-erro').textContent = 'Por favor, informe seu nome completo.';
+            valido = false;
+        }
+        // Email
+        const email = document.getElementById('email').value.trim();
+        if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+            document.getElementById('email-erro').textContent = 'Informe um e-mail válido.';
+            valido = false;
+        }
+        // CEP
+        const cep = document.getElementById('cep').value.trim();
+        if (!cep || !/^\d{5}-?\d{3}$/.test(cep)) {
+            document.getElementById('cep-erro').textContent = 'Informe um CEP válido (00000-000).';
+            valido = false;
+        }
+        // Rua
+        const rua = document.getElementById('rua').value.trim();
+        if (!rua) {
+            document.getElementById('rua-erro').textContent = 'Informe a rua.';
+            valido = false;
+        }
+        // Número
+        const numero = document.getElementById('numero').value.trim();
+        if (!numero) {
+            document.getElementById('numero-erro').textContent = 'Informe o número.';
+            valido = false;
+        }
+        // Bairro
+        const bairro = document.getElementById('bairro').value.trim();
+        if (!bairro) {
+            document.getElementById('bairro-erro').textContent = 'Informe o bairro.';
+            valido = false;
+        }
+        // Cidade
+        const cidade = document.getElementById('cidade').value.trim();
+        if (!cidade) {
+            document.getElementById('cidade-erro').textContent = 'Informe a cidade.';
+            valido = false;
+        }
+        // Estado
+        const estado = document.getElementById('estado').value.trim();
+        if (!estado || estado.length !== 2) {
+            document.getElementById('estado-erro').textContent = 'Informe o estado (UF, ex: SP).';
+            valido = false;
+        }
+        // Pagamento
+        const pagamento = document.getElementById('pagamento').value;
+        if (!pagamento) {
+            document.getElementById('pagamento-erro').textContent = 'Selecione a forma de pagamento.';
+            valido = false;
+        }
+        return valido;
+    }
+
+    document.getElementById('form-pagamento').addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (!validarCampos()) return;
+        document.getElementById('btn-finalizar').disabled = true;
+        document.getElementById('processando').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('form-pagamento').style.display = 'none';
+            document.getElementById('processando').style.display = 'none';
+            // Limpa carrinho após compra
+            localStorage.removeItem('carrinho');
+            localStorage.removeItem('carrinho_pagamento');
+            // Salva resumo do pedido para confirmação
+            localStorage.setItem('pedido_confirmado', JSON.stringify({ produtos: produtosPedido, total: totalPedido }));
+            // Salva pedido na conta do usuário logado
+            const user = JSON.parse(localStorage.getItem('usuario_logado_cns'));
+            if (user && user.email) {
+                const pedidosKey = 'pedidos_' + user.email;
+                const pedidos = JSON.parse(localStorage.getItem(pedidosKey)) || [];
+                const data = new Date();
+                pedidos.push({
+                    data: data.toLocaleDateString('pt-BR') + ' ' + data.toLocaleTimeString('pt-BR', {hour: '2-digit', minute:'2-digit'}),
+                    produtos: produtosPedido,
+                    total: totalPedido
+                });
+                localStorage.setItem(pedidosKey, JSON.stringify(pedidos));
+            }
+            window.location.href = 'confirmacao.html';
+        }, 1800);
+    });
+
+    // Busca automática de endereço pelo CEP
+    const cepInput = document.getElementById('cep');
+    if (cepInput) {
+        cepInput.addEventListener('blur', function() {
+            const cep = cepInput.value.replace(/\D/g, '');
+            if (cep.length === 8) {
+                fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.erro) {
+                            document.getElementById('cep-erro').textContent = 'CEP não encontrado.';
+                            document.getElementById('rua').value = '';
+                            document.getElementById('bairro').value = '';
+                            document.getElementById('cidade').value = '';
+                            document.getElementById('estado').value = '';
+                        } else {
+                            document.getElementById('cep-erro').textContent = '';
+                            document.getElementById('rua').value = data.logradouro || '';
+                            document.getElementById('bairro').value = data.bairro || '';
+                            document.getElementById('cidade').value = data.localidade || '';
+                            document.getElementById('estado').value = data.uf || '';
+                        }
+                    })
+                    .catch(() => {
+                        document.getElementById('cep-erro').textContent = 'Erro ao buscar o CEP.';
+                    });
+            }
+        });
+    }
+
+    function atualizarBadgeCarrinho() {
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        let badge = document.getElementById('badge-carrinho');
+        if (badge) {
+            if (carrinho.length > 0) {
+                badge.textContent = carrinho.length;
+                badge.style.display = 'inline-block';
+            } else {
+                badge.style.display = 'none';
+            }
+        }
+    }
+    document.addEventListener('DOMContentLoaded', atualizarBadgeCarrinho);
+    window.addEventListener('storage', atualizarBadgeCarrinho);
+    </script>
+    <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/64e4e6e094cf5d49dc6b7b7a/1h8k9kq2g';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+</body>
+</html> 

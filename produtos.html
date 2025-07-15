@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Veja todos os produtos da CNS - Calçados masculinos de qualidade, elegância e conforto. Loja oficial.">
+    <meta name="keywords" content="produtos, calçados masculinos, sapatos, botas, tênis, CNS, loja de calçados, coleção">
+    <meta name="author" content="CNS Calçados">
+    <link rel="canonical" href="https://www.cnscalcados.com.br/produtos.html">
+    <meta property="og:title" content="Produtos - CNS Calçados">
+    <meta property="og:description" content="Veja todos os produtos da CNS - Calçados masculinos de qualidade, elegância e conforto. Loja oficial.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cnscalcados.com.br/produtos.html">
+    <meta property="og:image" content="https://www.cnscalcados.com.br/imagens/sapato-classico.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Produtos - CNS Calçados">
+    <meta name="twitter:description" content="Veja todos os produtos da CNS - Calçados masculinos de qualidade, elegância e conforto. Loja oficial.">
+    <meta name="twitter:image" content="https://www.cnscalcados.com.br/imagens/sapato-classico.jpeg">
+    <title>Produtos - CNS Calçados</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="manifest" href="site.webmanifest">
+    <style>
+.carrinho-header {
+    position: absolute;
+    top: 24px;
+    right: 48px;
+    z-index: 20;
+}
+.carrinho-header a {
+    display: inline-block;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+    padding: 12px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.carrinho-header a:hover {
+    box-shadow: 0 4px 18px rgba(32,114,69,0.18);
+    transform: scale(1.08);
+}
+.carrinho-header img {
+    width: 38px;
+    height: 38px;
+}
+#badge-carrinho {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #e53935;
+    color: #fff;
+    font-size: 1rem;
+    padding: 2px 8px;
+    border-radius: 50%;
+    min-width: 22px;
+    text-align: center;
+    display: none;
+    font-weight: bold;
+    box-shadow: 0 1px 4px rgba(229,57,53,0.18);
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Produtos CNS</h1>
+            <p>Confira nossa coleção completa de calçados masculinos.</p>
+            <a href="index.html" class="btn">Voltar para Home</a>
+        </div>
+        <div class="carrinho-header">
+            <a href="carrinho.html" aria-label="Ver carrinho">
+                <img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png" alt="Carrinho">
+                <span id="badge-carrinho">0</span>
+            </a>
+        </div>
+        <div id="login-header" style="position:absolute;top:24px;right:120px;z-index:21;font-size:1.08rem;">
+            <a id="login-link" href="login.html" class="login-destaque"><span class="login-icone" aria-hidden="true">&#128100;</span> Entrar</a>
+        </div>
+    </header>
+
+    <!-- Barra de navegação -->
+    <nav class="navbar" role="navigation" aria-label="Navegação principal">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#destaques">Destaques</a></li>
+                <li><a href="produtos.html" aria-current="page">Produtos</a></li>
+                <li><a href="index.html#depoimentos">Depoimentos</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Galeria de Produtos -->
+    <section id="produtos" class="produtos">
+        <div class="container">
+            <h2>Nossa Coleção Completa</h2>
+            <div class="galeria">
+                <figure class="galeria-item">
+                    <img src="imagens/sapato-classico.jpeg" alt="Sapato clássico em couro preto" loading="lazy">
+                    <figcaption>
+                        <a href="produto.html?produto=Sapato%20Cl%C3%A1ssico" style="color:inherit;text-decoration:underline;font-weight:500;">Sapato Clássico</a>
+                        <span class="preco">R$ 259,90</span>
+                        <a href="pagamento.html?produto=Sapato%20Cl%C3%A1ssico&preco=259.90" class="btn">Comprar</a>
+                        <button class="btn btn-carrinho" onclick="adicionarAoCarrinho('Sapato Clássico', 259.90, 'imagens/sapato-classico.jpeg')">Adicionar ao carrinho</button>
+                    </figcaption>
+                </figure>
+                <figure class="galeria-item">
+                    <img src="imagens/sapato-casual.jpg" alt="Sapato casual em couro marrom" loading="lazy">
+                    <figcaption>
+                        <a href="produto.html?produto=Sapato%20Casual" style="color:inherit;text-decoration:underline;font-weight:500;">Sapato Casual</a>
+                        <span class="preco">R$ 249,90</span>
+                        <a href="pagamento.html?produto=Sapato%20Casual&preco=249.90" class="btn">Comprar</a>
+                        <button class="btn btn-carrinho" onclick="adicionarAoCarrinho('Sapato Casual', 249.90, 'imagens/sapato-casual.jpg')">Adicionar ao carrinho</button>
+                    </figcaption>
+                </figure>
+                <figure class="galeria-item">
+                    <img src="imagens/sapato-esportivo.jpg" alt="Sapato esportivo moderno" loading="lazy">
+                    <figcaption>
+                        <a href="produto.html?produto=Sapato%20Esportivo" style="color:inherit;text-decoration:underline;font-weight:500;">Sapato Esportivo</a>
+                        <span class="preco">R$ 199,90</span>
+                        <a href="pagamento.html?produto=Sapato%20Esportivo&preco=199.90" class="btn">Comprar</a>
+                        <button class="btn btn-carrinho" onclick="adicionarAoCarrinho('Sapato Esportivo', 199.90, 'imagens/sapato-esportivo.jpg')">Adicionar ao carrinho</button>
+                    </figcaption>
+                </figure>
+                <figure class="galeria-item">
+                    <img src="imagens/bota-couro.jpg" alt="Bota de couro legítimo" loading="lazy">
+                    <figcaption>
+                        <a href="produto.html?produto=Bota%20de%20Couro" style="color:inherit;text-decoration:underline;font-weight:500;">Bota de Couro</a>
+                        <span class="preco">R$ 399,90</span>
+                        <a href="pagamento.html?produto=Bota%20de%20Couro&preco=399.90" class="btn">Comprar</a>
+                        <button class="btn btn-carrinho" onclick="adicionarAoCarrinho('Bota de Couro', 399.90, 'imagens/bota-couro.jpg')">Adicionar ao carrinho</button>
+                    </figcaption>
+                </figure>
+                <figure class="galeria-item">
+                    <img src="imagens/sapato3.jpg" alt="Sapato social elegante" loading="lazy">
+                    <figcaption>
+                        <a href="produto.html?produto=Sapato%20Social" style="color:inherit;text-decoration:underline;font-weight:500;">Sapato Social</a>
+                        <span class="preco">R$ 279,90</span>
+                        <a href="pagamento.html?produto=Sapato%20Social&preco=279.90" class="btn">Comprar</a>
+                        <button class="btn btn-carrinho" onclick="adicionarAoCarrinho('Sapato Social', 279.90, 'imagens/sapato3.jpg')">Adicionar ao carrinho</button>
+                    </figcaption>
+                </figure>
+                <figure class="galeria-item">
+                    <img src="imagens/sapato4.jpg" alt="Tênis casual confortável" loading="lazy">
+                    <figcaption>
+                        <a href="produto.html?produto=T%C3%AAnis%20Casual" style="color:inherit;text-decoration:underline;font-weight:500;">Tênis Casual</a>
+                        <span class="preco">R$ 189,90</span>
+                        <a href="pagamento.html?produto=T%C3%AAnis%20Casual&preco=189.90" class="btn">Comprar</a>
+                        <button class="btn btn-carrinho" onclick="adicionarAoCarrinho('Tênis Casual', 189.90, 'imagens/sapato4.jpg')">Adicionar ao carrinho</button>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>CNS Calçados</h3>
+                    <p>Elegância e qualidade desde 1990</p>
+                    <p>&copy; 2025 CNS. Todos os direitos reservados.</p>
+                </div>
+                <div class="redes-sociais">
+                    <h4>Siga-nos</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Siga-nos no Instagram">
+                            <img src="imagens/Instagram.png" alt="Instagram">
+                        </a>
+                        <a href="#" aria-label="Siga-nos no Facebook">
+                            <img src="imagens/facebook.png" alt="Facebook">
+                        </a>
+                    </div>
+                    <div class="footer-links" style="margin-top:1.2rem;">
+                        <a href="sobre.html">Sobre a Empresa</a> |
+                        <a href="trocas-devolucoes.html">Trocas/Devoluções</a> |
+                        <a href="politica-privacidade.html">Política de Privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="msg-carrinho" style="display:none;position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#207245;color:#fff;padding:1rem 2rem;border-radius:8px;z-index:9999;font-size:1.1rem;box-shadow:0 2px 10px rgba(32,114,69,0.13);font-weight:500;">Produto adicionado ao carrinho!</div>
+    <script src="js/main.js"></script>
+    <script>
+function adicionarAoCarrinho(nome, preco, imagem) {
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    carrinho.push({ nome, preco, imagem, quantidade: 1 });
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    mostrarMsgCarrinho();
+}
+function mostrarMsgCarrinho() {
+    const msg = document.getElementById('msg-carrinho');
+    if (msg) {
+        msg.style.display = 'block';
+        setTimeout(() => { msg.style.display = 'none'; }, 1800);
+    }
+}
+
+function atualizarBadgeCarrinho() {
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    let badge = document.getElementById('badge-carrinho');
+    if (badge) {
+        if (carrinho.length > 0) {
+            badge.textContent = carrinho.length;
+            badge.style.display = 'inline-block';
+        } else {
+            badge.style.display = 'none';
+        }
+    }
+}
+document.addEventListener('DOMContentLoaded', atualizarBadgeCarrinho);
+window.addEventListener('storage', atualizarBadgeCarrinho);
+
+function atualizarLoginHeader() {
+    const user = JSON.parse(localStorage.getItem('usuario_logado_cns'));
+    const link = document.getElementById('login-link');
+    if (user && user.nome) {
+        link.textContent = user.nome.split(' ')[0];
+        link.href = 'cliente.html';
+    } else {
+        link.textContent = 'Entrar';
+        link.href = 'login.html';
+    }
+}
+document.addEventListener('DOMContentLoaded', atualizarLoginHeader);
+window.addEventListener('storage', atualizarLoginHeader);
+</script>
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/64e4e6e094cf5d49dc6b7b7a/1h8k9kq2g';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+</body>
+</html> 

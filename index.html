@@ -3,125 +3,384 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CNS - Elegância e sofisticação em calçados masculinos desde 1990.">
-    <title>CNS Calçados</title>
+    <meta name="description" content="CNS Calçados: elegância e sofisticação em calçados masculinos desde 1990. Sapatos, botas e tênis de qualidade. Loja oficial.">
+    <meta name="keywords" content="calçados masculinos, sapatos, botas, tênis, CNS, loja de calçados, elegância, conforto, qualidade">
+    <meta name="author" content="CNS Calçados">
+    <link rel="canonical" href="https://www.cnscalcados.com.br/">
+    <meta property="og:title" content="CNS Calçados - Elegância Masculina desde 1990">
+    <meta property="og:description" content="CNS Calçados: elegância e sofisticação em calçados masculinos desde 1990. Sapatos, botas e tênis de qualidade. Loja oficial.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cnscalcados.com.br/">
+    <meta property="og:image" content="https://www.cnscalcados.com.br/imagens/sapato-classico.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CNS Calçados - Elegância Masculina desde 1990">
+    <meta name="twitter:description" content="CNS Calçados: elegância e sofisticação em calçados masculinos desde 1990. Sapatos, botas e tênis de qualidade. Loja oficial.">
+    <meta name="twitter:image" content="https://www.cnscalcados.com.br/imagens/sapato-classico.jpeg">
+    <title>CNS Calçados - Elegância Masculina desde 1990</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="manifest" href="site.webmanifest">
+    <style>
+.carrinho-header {
+    position: absolute;
+    top: 24px;
+    right: 48px;
+    z-index: 20;
+}
+.carrinho-header a {
+    display: inline-block;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+    padding: 12px;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.carrinho-header a:hover {
+    box-shadow: 0 4px 18px rgba(32,114,69,0.18);
+    transform: scale(1.08);
+}
+.carrinho-header img {
+    width: 38px;
+    height: 38px;
+}
+#badge-carrinho {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #e53935;
+    color: #fff;
+    font-size: 1rem;
+    padding: 2px 8px;
+    border-radius: 50%;
+    min-width: 22px;
+    text-align: center;
+    display: none;
+    font-weight: bold;
+    box-shadow: 0 1px 4px rgba(229,57,53,0.18);
+}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
-
     <!-- Cabeçalho -->
     <header class="hero">
         <div class="hero-content">
             <h1>CNS Online</h1>
             <p>Calçados masculinos com sofisticação e qualidade incomparável desde 1990.</p>
-            <a href="#produtos" class="btn">Conheça nossos produtos</a>
+            <a href="produtos.html" target="_blank" class="btn">Ver todos os produtos</a>
+        </div>
+        <div class="carrinho-header">
+            <a href="carrinho.html" aria-label="Ver carrinho">
+                <img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png" alt="Carrinho">
+                <span id="badge-carrinho">0</span>
+            </a>
+        </div>
+        <div id="login-header" style="position:absolute;top:24px;right:120px;z-index:21;font-size:1.08rem;">
+            <a id="login-link" href="login.html" class="login-destaque"><span class="login-icone" aria-hidden="true">&#128100;</span> Entrar</a>
         </div>
     </header>
 
     <!-- Barra de navegação -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#destaques">Destaques</a></li>
-            <li><a href="#depoimentos">Depoimentos</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
+    <nav class="navbar" role="navigation" aria-label="Navegação principal">
+        <div class="nav-container">
+            <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#" aria-current="page">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#destaques">Destaques</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Seção sobre -->
     <section id="sobre" class="sobre">
-        <h2>Sobre a CNS</h2>
-        <p>A história da CNS começa quando, Luiz Flores Carrera ao renunciar seu cargo na indústria de alfaiataria que vinha enfrentando crises geradas pelo barateamento na produção de ternos, pediu 300 cruzeiros emprestados com sua sogra para comprar alguns modelos de sapatos masculinos.</p>
-        <p>Em 1975, surgiu a LUIGI, no centro da cidade de São Paulo. A boa aceitação dos produtos e o sucesso de vendas dessa loja abriram caminho para a expansão e abertura de novas unidades. Fiel ao público masculino, em 1990, foi inaugurada no Shopping Ibirapuera a Cia. Nacional de Sapatos, com um layout atraente e produtos de excelente qualidade.</p>
-        <p>De lá para cá, a CNS se consolidou como uma referência em calçados e acessórios masculinos, sempre acompanhando as tendências da moda e oferecendo produtos com estilo, design e qualidade.</p>
+        <div class="container">
+            <h2>Sobre a CNS</h2>
+            <div class="sobre-content">
+                <div class="sobre-texto">
+                    <p>A história da CNS começa quando Luiz Flores Carrera, ao renunciar seu cargo na indústria de alfaiataria, decidiu seguir sua paixão pelos calçados masculinos. Em 1990, fundou a CNS com a missão de oferecer calçados que combinassem elegância, conforto e durabilidade.</p>
+                    <p>Hoje, após mais de 30 anos no mercado, a CNS se tornou referência em calçados masculinos, mantendo sempre os valores de qualidade artesanal e atenção aos detalhes que fizeram nossa história.</p>
+                </div>
+                <div class="sobre-valores">
+                    <div class="valor">
+                        <h3>Qualidade</h3>
+                        <p>Materiais selecionados e acabamento impecável</p>
+                    </div>
+                    <div class="valor">
+                        <h3>Conforto</h3>
+                        <p>Design ergonômico para máximo conforto</p>
+                    </div>
+                    <div class="valor">
+                        <h3>Elegância</h3>
+                        <p>Estilo atemporal para o homem moderno</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Seção de Destaques -->
     <section id="destaques" class="destaques">
-        <h2>Destaques da Semana</h2>
-        <div class="destaques-grid">
-            <div class="produto">
-                <img src="images/sapato1.jpg" alt="Sapato Clássico">
-                <h3>Sapato Clássico</h3>
-                <p>O equilíbrio perfeito entre elegância e conforto.</p>
-            </div>
-            <div class="produto">
-                <img src="images/sapato2.jpg" alt="Sapato Casual">
-                <h3>Sapato Casual</h3>
-                <p>Design moderno, ideal para todas as ocasiões.</p>
-            </div>
-            <div class="produto">
-                <img src="images/sapato3.jpg" alt="Sapato Esportivo">
-                <h3>Sapato Esportivo</h3>
-                <p>Conforto e estilo para o dia a dia.</p>
-            </div>
-            <div class="produto">
-                <img src="images/sapato4.jpg" alt="Bota de Couro">
-                <h3>Bota de Couro</h3>
-                <p>Resistência e elegância para dias frios.</p>
+        <div class="container">
+            <h2>Destaques da Semana</h2>
+            <div class="destaques-grid">
+                <article class="produto">
+                    <img src="imagens/bota-casual.jpg" alt="Bota casual em couro marrom com solado antiderrapante" loading="lazy"/>
+                    <div class="produto-content">
+                        <h3>Bota Casual</h3>
+                        <p>O equilíbrio perfeito entre elegância e conforto.</p>
+                        <span class="preco">R$ 299,90</span>
+                    </div>
+                </article>
+                <article class="produto">
+                    <img src="imagens/sapato-casual.jpg" alt="Sapato casual em couro preto com detalhes em costura" loading="lazy"/>
+                    <div class="produto-content">
+                        <h3>Sapato Casual</h3>
+                        <p>Design moderno, ideal para todas as ocasiões.</p>
+                        <span class="preco">R$ 249,90</span>
+                    </div>
+                </article>
+                <article class="produto">
+                    <img src="imagens/sapato-esportivo.jpg" alt="Sapato esportivo em couro com solado flexível" loading="lazy"/>
+                    <div class="produto-content">
+                        <h3>Sapato Esportivo</h3>
+                        <p>Conforto e estilo para o dia a dia.</p>
+                        <span class="preco">R$ 199,90</span>
+                    </div>
+                </article>
+                <article class="produto">
+                    <img src="imagens/bota-couro.jpg" alt="Bota de couro legítimo com forro interno" loading="lazy"/>
+                    <div class="produto-content">
+                        <h3>Bota de Couro</h3>
+                        <p>Resistência e elegância para dias frios.</p>
+                        <span class="preco">R$ 399,90</span>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Galeria de Produtos -->
     <section id="produtos" class="produtos">
-        <h2>Conheça Nossos Produtos</h2>
-        <div class="galeria">
-            <img src="images/sapato1.jpg" alt="Sapato Masculino 1">
-            <img src="images/sapato2.jpg" alt="Sapato Masculino 2">
-            <img src="images/sapato3.jpg" alt="Sapato Masculino 3">
-            <img src="images/sapato4.jpg" alt="Sapato Masculino 4">
+        <div class="container">
+            <h2>Nossa Coleção Completa</h2>
+            <div class="galeria">
+                <figure class="galeria-item">
+                    <img src="imagens/sapato-classico.jpeg" alt="Sapato clássico em couro preto" loading="lazy">
+                    <figcaption>Sapato Clássico</figcaption>
+                </figure>
+                <figure class="galeria-item">
+                    <img src="imagens/sapato-casual.jpg" alt="Sapato casual em couro marrom" loading="lazy">
+                    <figcaption>Sapato Casual</figcaption>
+                </figure>
+                <figure class="galeria-item">
+                    <img src="imagens/sapato-esportivo.jpg" alt="Sapato esportivo moderno" loading="lazy">
+                    <figcaption>Sapato Esportivo</figcaption>
+                </figure>
+                <figure class="galeria-item">
+                    <img src="imagens/bota-couro.jpg" alt="Bota de couro legítimo" loading="lazy">
+                    <figcaption>Bota de Couro</figcaption>
+                </figure>
+                <figure class="galeria-item">
+                    <img src="imagens/sapato3.jpg" alt="Sapato social elegante" loading="lazy">
+                    <figcaption>Sapato Social</figcaption>
+                </figure>
+                <figure class="galeria-item">
+                    <img src="imagens/sapato4.jpg" alt="Tênis casual confortável" loading="lazy">
+                    <figcaption>Tênis Casual</figcaption>
+                </figure>
+            </div>
         </div>
     </section>
 
     <!-- Seção de Depoimentos -->
     <section id="depoimentos" class="depoimentos">
-        <h2>O que nossos clientes dizem</h2>
-        <div class="depoimentos-container">
-            <div class="depoimento">
-                <p>"Os sapatos da CNS são incríveis! Qualidade impecável e muito conforto!"</p>
-                <span>- João Silva</span>
-            </div>
-            <div class="depoimento">
-                <p>"Adorei a experiência de compra! Atendimento excelente e entrega rápida."</p>
-                <span>- Marcos Oliveira</span>
-            </div>
-            <div class="depoimento">
-                <p>"A variedade de modelos é impressionante. Sempre encontro o que procuro."</p>
-                <span>- Pedro Almeida</span>
+        <div class="container">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="depoimentos-container">
+                <blockquote class="depoimento">
+                    <p>"Os sapatos da CNS são incríveis! Qualidade impecável e muito conforto. Já estou no meu terceiro par!"</p>
+                    <cite>- João Silva, Cliente desde 2018</cite>
+                </blockquote>
+                <blockquote class="depoimento">
+                    <p>"Adorei a experiência de compra! Atendimento excelente e entrega rápida. Recomendo para todos!"</p>
+                    <cite>- Marcos Oliveira, Cliente desde 2020</cite>
+                </blockquote>
+                <blockquote class="depoimento">
+                    <p>"A variedade de modelos é impressionante. Sempre encontro o que procuro e a qualidade nunca decepciona."</p>
+                    <cite>- Pedro Almeida, Cliente desde 2015</cite>
+                </blockquote>
             </div>
         </div>
     </section>
 
     <!-- Seção de Contato -->
     <section id="contato" class="contato">
-        <h2>Entre em Contato</h2>
-        <p>Tem alguma dúvida ou deseja mais informações? Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
-        <form action="#" method="post">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-            <button type="submit" class="btn">Enviar</button>
-        </form>
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <div class="contato-content">
+                <div class="contato-info">
+                    <h3>Informações de Contato</h3>
+                    <div class="info-item">
+                        <strong>Endereço:</strong>
+                        <p>Rua das Flores, 123 - Centro<br>São Paulo, SP - 01234-567</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Telefone:</strong>
+                        <p>(11) 9999-9999</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Email:</strong>
+                        <p>contato@cnscalcados.com.br</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Horário de Funcionamento:</strong>
+                        <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 16h</p>
+                    </div>
+                </div>
+                <form class="contato-form" action="#" method="post" novalidate>
+                    <div class="form-group">
+                        <label for="nome">Nome completo:</label>
+                        <input type="text" id="nome" name="nome" required aria-describedby="nome-error">
+                        <span id="nome-error" class="error-message" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required aria-describedby="email-error">
+                        <span id="email-error" class="error-message" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" aria-describedby="telefone-error">
+                        <span id="telefone-error" class="error-message" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" required aria-describedby="mensagem-error"></textarea>
+                        <span id="mensagem-error" class="error-message" aria-live="polite"></span>
+                    </div>
+                    <button type="submit" class="btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
     </section>
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2025 CNS. Todos os direitos reservados.</p>
-        <div class="redes-sociais">
-            <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
-            <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-            <a href="#"><img src="
-::contentReference[oaicite:0]{index=0}
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>CNS Calçados</h3>
+                    <p>Elegância e qualidade desde 1990</p>
+                    <p>&copy; 2025 CNS. Todos os direitos reservados.</p>
+                </div>
+                <div class="redes-sociais">
+                    <h4>Siga-nos</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Siga-nos no Instagram">
+                            <img src="imagens/Instagram.png" alt="Instagram">
+                        </a>
+                        <a href="#" aria-label="Siga-nos no Facebook">
+                            <img src="imagens/facebook.png" alt="Facebook">
+                        </a>
+                    </div>
+                    <div class="footer-links" style="margin-top:1.2rem;">
+                        <a href="sobre.html">Sobre a Empresa</a> |
+                        <a href="trocas-devolucoes.html">Trocas/Devoluções</a> |
+                        <a href="politica-privacidade.html">Política de Privacidade</a>
+                    </div>
+                    <form id="newsletter-form" style="margin-top:1.5rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;">
+                        <label for="newsletter-email" style="font-weight:500;">Receba novidades:</label>
+                        <input type="email" id="newsletter-email" name="newsletter-email" placeholder="Seu e-mail" required style="padding:0.5rem 0.8rem;border-radius:5px;border:1px solid #ccc;min-width:180px;">
+                        <button type="submit" class="btn" style="padding:0.5rem 1.2rem;">Assinar</button>
+                    </form>
+                    <div id="newsletter-msg" style="display:none;margin-top:0.7rem;font-weight:500;color:#207245;"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <script src="js/main.js"></script>
+    <script src="js/contato.js"></script>
+    <script>
+function atualizarBadgeCarrinho() {
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    let badge = document.getElementById('badge-carrinho');
+    if (badge) {
+        if (carrinho.length > 0) {
+            badge.textContent = carrinho.length;
+            badge.style.display = 'inline-block';
+        } else {
+            badge.style.display = 'none';
+        }
+    }
+}
+document.addEventListener('DOMContentLoaded', atualizarBadgeCarrinho);
+window.addEventListener('storage', atualizarBadgeCarrinho);
 
-
-
-                            
+function atualizarLoginHeader() {
+    const user = JSON.parse(localStorage.getItem('usuario_logado_cns'));
+    const link = document.getElementById('login-link');
+    if (user && user.nome) {
+        link.textContent = user.nome.split(' ')[0];
+        link.href = 'cliente.html';
+    } else {
+        link.textContent = 'Entrar';
+        link.href = 'login.html';
+    }
+}
+document.addEventListener('DOMContentLoaded', atualizarLoginHeader);
+window.addEventListener('storage', atualizarLoginHeader);
+</script>
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/64e4e6e094cf5d49dc6b7b7a/1h8k9kq2g';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('newsletter-form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletter-email').value.trim();
+            if (email && /^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById('newsletter-msg').textContent = 'Obrigado por se inscrever! Você receberá nossas novidades.';
+                document.getElementById('newsletter-msg').style.display = 'block';
+                form.reset();
+                setTimeout(() => { document.getElementById('newsletter-msg').style.display = 'none'; }, 3500);
+            } else {
+                document.getElementById('newsletter-msg').textContent = 'Digite um e-mail válido.';
+                document.getElementById('newsletter-msg').style.display = 'block';
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>

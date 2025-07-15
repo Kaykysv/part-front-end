@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CNS Calçados</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: var(--bg-color);
+            min-height: 100vh;
+            font-family: var(--font-family);
+        }
+        .login-hero {
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-align: center;
+            padding: 140px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+        .login-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(196, 30, 58, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+        .login-hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            margin-bottom: 24px;
+            font-weight: 700;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 1;
+        }
+        .login-hero p {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        .login-container {
+            max-width: 450px;
+            margin: -60px auto 2.5rem auto;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-hover);
+            padding: 2.5rem 2rem 2rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+        .login-container h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        .login-form label {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            margin-bottom: 1.2rem;
+            border-radius: var(--border-radius);
+            border: 2px solid #e9ecef;
+            font-size: 1rem;
+            background: var(--white);
+            transition: var(--transition);
+            box-sizing: border-box;
+        }
+        .login-form input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+        }
+        .login-form button, .btn {
+            width: 100%;
+            background: var(--gradient-secondary);
+            color: var(--white);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        .login-form button:hover, .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+        .login-toggle {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .login-toggle a {
+            color: var(--secondary-color);
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .login-toggle a:hover {
+            color: #a3152c;
+        }
+        .login-msg {
+            text-align: center;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            border-radius: var(--border-radius);
+        }
+        .login-msg.error {
+            background: #fee;
+            color: #c41e3a;
+            border: 1px solid #fcc;
+        }
+        .login-msg.success {
+            background: #efe;
+            color: #207245;
+            border: 1px solid #cfc;
+        }
+        #esqueci-link {
+            color: var(--secondary-color) !important;
+        }
+        @media (max-width: 600px) {
+            .login-container {
+                margin: -40px 1rem 2rem 1rem;
+                padding: 2rem 1.5rem 1.5rem 1.5rem;
+            }
+            .login-hero {
+                padding: 100px 0 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-hero">
+        <h1>CNS Calçados</h1>
+        <p>Elegância e qualidade desde 1990</p>
+    </div>
+    <div class="login-container">
+        <h1 id="login-title">Entrar</h1>
+        <form id="login-form" class="login-form">
+            <div id="nome-group" style="display:none;">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" autocomplete="name">
+            </div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required autocomplete="current-password">
+            <button type="submit" id="btn-login">Entrar</button>
+        </form>
+        <div class="login-msg" id="login-msg"></div>
+        <div class="login-toggle">
+            <span id="toggle-text">Não tem conta?</span>
+            <a id="toggle-link">Cadastre-se</a>
+        </div>
+        <div class="login-toggle" style="margin-top:0.5rem;">
+            <a id="esqueci-link">Esqueci minha senha?</a>
+        </div>
+        <form id="form-recuperar" style="display:none;margin-top:1.2rem;">
+            <label for="rec-email">E-mail cadastrado:</label>
+            <input type="email" id="rec-email" name="rec-email" required autocomplete="email">
+            <label for="rec-nova-senha">Nova senha:</label>
+            <input type="password" id="rec-nova-senha" name="rec-nova-senha" required autocomplete="new-password">
+            <button type="submit" class="btn">Redefinir Senha</button>
+            <div class="login-msg" id="rec-msg"></div>
+        </form>
+    </div>
+    <script>
+    let modoCadastro = false;
+    function getUsuarios() {
+        return JSON.parse(localStorage.getItem('usuarios_cns')) || [];
+    }
+    function setUsuarios(users) {
+        localStorage.setItem('usuarios_cns', JSON.stringify(users));
+    }
+    function setUsuarioLogado(user) {
+        localStorage.setItem('usuario_logado_cns', JSON.stringify(user));
+    }
+    function mostrarMsg(msg, tipo = 'error') {
+        const msgEl = document.getElementById('login-msg');
+        msgEl.textContent = msg;
+        msgEl.className = `login-msg ${tipo}`;
+    }
+    document.getElementById('toggle-link').onclick = function() {
+        modoCadastro = !modoCadastro;
+        document.getElementById('login-title').textContent = modoCadastro ? 'Cadastrar' : 'Entrar';
+        document.getElementById('btn-login').textContent = modoCadastro ? 'Cadastrar' : 'Entrar';
+        document.getElementById('toggle-text').textContent = modoCadastro ? 'Já tem conta?' : 'Não tem conta?';
+        document.getElementById('toggle-link').textContent = modoCadastro ? 'Entrar' : 'Cadastre-se';
+        document.getElementById('nome-group').style.display = modoCadastro ? 'block' : 'none';
+        document.getElementById('login-msg').textContent = '';
+        document.getElementById('login-msg').className = 'login-msg';
+    };
+    document.getElementById('login-form').onsubmit = function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value.trim().toLowerCase();
+        const senha = document.getElementById('senha').value;
+        const nome = document.getElementById('nome').value.trim();
+        let users = getUsuarios();
+        if (modoCadastro) {
+            if (!nome || !email || !senha) {
+                mostrarMsg('Preencha todos os campos.');
+                return;
+            }
+            if (users.find(u => u.email === email)) {
+                mostrarMsg('E-mail já cadastrado.');
+                return;
+            }
+            const novo = { nome, email, senha };
+            users.push(novo);
+            setUsuarios(users);
+            setUsuarioLogado(novo);
+            mostrarMsg('Cadastro realizado com sucesso!', 'success');
+            setTimeout(() => {
+                window.location.href = 'cliente.html';
+            }, 1000);
+        } else {
+            const user = users.find(u => u.email === email && u.senha === senha);
+            if (!user) {
+                mostrarMsg('E-mail ou senha inválidos.');
+                return;
+            }
+            setUsuarioLogado(user);
+            mostrarMsg('Login realizado com sucesso!', 'success');
+            setTimeout(() => {
+                window.location.href = 'cliente.html';
+            }, 1000);
+        }
+    };
+    document.getElementById('esqueci-link').onclick = function() {
+        document.getElementById('form-recuperar').style.display = 'block';
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('toggle-link').style.display = 'none';
+        document.getElementById('toggle-text').style.display = 'none';
+        document.getElementById('login-title').textContent = 'Recuperar Senha';
+        document.getElementById('login-msg').textContent = '';
+        document.getElementById('login-msg').className = 'login-msg';
+    };
+    document.getElementById('form-recuperar').onsubmit = function(e) {
+        e.preventDefault();
+        const email = document.getElementById('rec-email').value.trim().toLowerCase();
+        const novaSenha = document.getElementById('rec-nova-senha').value;
+        let users = getUsuarios();
+        const user = users.find(u => u.email === email);
+        if (!user) {
+            document.getElementById('rec-msg').textContent = 'E-mail não encontrado.';
+            return;
+        }
+        user.senha = novaSenha;
+        setUsuarios(users);
+        document.getElementById('rec-msg').textContent = 'Senha redefinida com sucesso!';
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 1500);
+    };
+    </script>
+</body>
+</html> 
